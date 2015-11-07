@@ -1,0 +1,1 @@
+<script type="text/javascript" src="${ctx}/static/js/jquery.table.js"></script>

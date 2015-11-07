@@ -1,4 +1,4 @@
-package cn.elvea.service;
+package cn.elvea.core.service;
 
 import cn.elvea.domain.IdEntity;
 import cn.elvea.repository.EntityRepository;
@@ -20,7 +20,6 @@ public abstract class EntityService<T extends IdEntity> extends BaseService {
     public List<T> findAll() {
         return getRepository().findAll();
     }
-
 
     public void delete(Long id) {
         getRepository().delete(id);

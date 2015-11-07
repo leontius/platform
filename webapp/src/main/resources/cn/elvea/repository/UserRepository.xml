@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.elvea.repository.UserRepository">
     <sql id="entityColumns">
-    usr_id, usr_usg_id, usr_username, usr_email, usr_password,
-    usr_nickname, usr_fullname, usr_status, usr_salt, usr_description, usr_source, usr_last_login_datetime,
-    usr_created_at, usr_created_by, usr_updated_at, usr_updated_by
+        usr_id, usr_usg_id, usr_username, usr_email, usr_password,
+        usr_nickname, usr_fullname, usr_status, usr_salt, usr_description, usr_source, usr_last_login_datetime,
+        usr_created_at, usr_created_by, usr_updated_at, usr_updated_by
     </sql>
 
     <resultMap id="userSimpleResultMap" type="User">
@@ -28,15 +28,15 @@
 
     <update id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="User">
         insert into sys_users (
-            usr_usg_id, usr_username, usr_email, usr_password,
-            usr_nickname, usr_fullname, usr_status, usr_salt,
-            usr_description, usr_source, usr_last_login_datetime,
-            usr_created_at, usr_created_by, usr_updated_at, usr_updated_by
+        usr_usg_id, usr_username, usr_email, usr_password,
+        usr_nickname, usr_fullname, usr_status, usr_salt,
+        usr_description, usr_source, usr_last_login_datetime,
+        usr_created_at, usr_created_by, usr_updated_at, usr_updated_by
         ) values (
-            #{userGroupId}, #{username}, #{email}, #{password},
-            #{nickname}, #{fullname}, #{status}, #{salt},
-            #{description}, #{source}, #{lastLoginDatetime},
-            #{createdAt}, #{createdBy}, #{updatedAt}, #{updatedBy}
+        #{userGroupId}, #{username}, #{email}, #{password},
+        #{nickname}, #{fullname}, #{status}, #{salt},
+        #{description}, #{source}, #{lastLoginDatetime},
+        #{createdAt}, #{createdBy}, #{updatedAt}, #{updatedBy}
         )
     </update>
 
@@ -58,6 +58,18 @@
         <include refid="entityColumns"/>
         from sys_users
         where usr_id = #{id}
+    </select>
+
+    <select id="findAll" resultMap="userSimpleResultMap">
+        select
+        <include refid="entityColumns"/>
+        from sys_users
+    </select>
+
+    <select id="findByPage" resultMap="userSimpleResultMap">
+        select
+        <include refid="entityColumns"/>
+        from sys_users
     </select>
 
     <select id="findByUsername" resultMap="userSimpleResultMap">

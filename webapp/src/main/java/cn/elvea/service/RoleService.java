@@ -1,5 +1,6 @@
 package cn.elvea.service;
 
+import cn.elvea.core.service.EntityService;
 import cn.elvea.domain.Role;
 import cn.elvea.repository.EntityRepository;
 import cn.elvea.repository.RoleRepository;

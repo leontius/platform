@@ -1,7 +1,6 @@
-package cn.elvea.dao;
+package cn.elvea.core.dao;
 
-
-import cn.elvea.persistence.dialect.Dialect;
+import cn.elvea.core.persistence.dialect.Dialect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;

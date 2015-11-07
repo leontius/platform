@@ -1,7 +1,7 @@
-package cn.elvea.persistence.dialect;
+package cn.elvea.core.persistence.dialect;
 
+import cn.elvea.core.persistence.jdbc.JdbcUtils;
 import cn.elvea.exception.DatabaseException;
-import cn.elvea.persistence.jdbc.JdbcUtils;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -56,10 +56,6 @@ public abstract class Dialect {
     private static String getDialectName(String databaseProductName) throws DatabaseException {
         if (databaseProductName.contains("mysql")) {
             return MySqlDialect.class.getName();
-        } else if (databaseProductName.contains("oracle")) {
-            return OracleDialect.class.getName();
-        } else if (databaseProductName.contains("microsoft sql server")) {
-            return MsSqlDialect.class.getName();
         } else {
             throw new DatabaseException("Unsuport Datebase.");
         }
@@ -68,4 +64,8 @@ public abstract class Dialect {
     public abstract String getTimeSql();
 
     public abstract String getDateSql();
+
+    public abstract String getLimitSql(String sql, int offset, int limit);
+
+    public abstract String getCountString(String sql);
 }

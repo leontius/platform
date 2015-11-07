@@ -1,4 +1,4 @@
-package cn.elvea.persistence.jdbc;
+package cn.elvea.core.persistence.jdbc;
 
 
 import org.slf4j.Logger;

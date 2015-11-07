@@ -7,14 +7,15 @@ import java.util.List;
 import java.util.Map;
 
 public class Page<T> {
-    private int start;              // 当前页首条记录位置
-    private int end;                // 当前页尾条记录位置
-    private int limit;              // 每页记录数
-    private int page;               // 当前页
-    private int total;              // 总记录数
-    private int totalPage;          // 总页数
-    private String sortName;        // 排序列
-    private String sortOrder;       // 排序方式
+    private int start;                                      // 当前页首条记录位置
+    private int end;                                        // 当前页尾条记录位置
+    private int limit;                                      // 每页记录数
+    private int page;                                       // 当前页
+    private int total;                                      // 总记录数
+    private int totalPage;                                  // 总页数
+    private String sortName;                                // 排序列
+    private String sortOrder;                               // 排序方式
+    private boolean countable = true;                       // 是否统计总记录数
     private Map<String, String> params = new HashMap<>();   // 请求参数
     private List<T> rows = new ArrayList<>();               // 记录
 
@@ -51,7 +52,11 @@ public class Page<T> {
         } else {
             this.sortOrder = "asc";
         }
+    }
 
+    public Page(int page, int limit) {
+        this.page = page;
+        this.limit = limit;
     }
 
     public int getStart() {
@@ -132,5 +137,13 @@ public class Page<T> {
 
     public void setRows(List<T> rows) {
         this.rows = rows;
+    }
+
+    public boolean isCountable() {
+        return countable;
+    }
+
+    public void setCountable(boolean countable) {
+        this.countable = countable;
     }
 }

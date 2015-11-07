@@ -53,3 +53,39 @@ body {
     background-color: #428bca;
 }
 
+.box {
+    width: 100%;
+    background: #FFF;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.box-header.with-border {
+    border-bottom: 1px solid #eee;
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.box-title {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    margin: 0;
+}
+
+.box .box-body {
+    border-radius: 0 0 3px 3px;
+    padding: 10px;
+}
+
+.main .page-header {
+    margin: 20px 0;
+}
+
+

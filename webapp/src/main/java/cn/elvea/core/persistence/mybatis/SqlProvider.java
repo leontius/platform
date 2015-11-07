@@ -1,6 +1,6 @@
-package cn.elvea.persistence.mybatis;
+package cn.elvea.core.persistence.mybatis;
 
-import cn.elvea.persistence.dialect.Dialect;
+import cn.elvea.core.persistence.dialect.Dialect;
 
 public class SqlProvider {
     protected Dialect dialect;

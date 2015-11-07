@@ -2,14 +2,14 @@
 <%@ include file="../views/commons/taglibs.jsp" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <sitemesh:write property='title'/>
+    <head>
+        <sitemesh:write property='title'/>
 
-    <%@ include file="../views/commons/meta.jsp" %>
+        <%@ include file="../views/commons/meta.jsp" %>
 
-    <sitemesh:write property='head'/>
-</head>
-<body>
-<sitemesh:write property='body'/>
-</body>
+        <sitemesh:write property='head'/>
+    </head>
+    <body>
+        <sitemesh:write property='body'/>
+    </body>
 </html>

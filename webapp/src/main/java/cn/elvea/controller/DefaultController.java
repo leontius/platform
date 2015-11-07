@@ -15,4 +15,9 @@ public class DefaultController {
     public String home() {
         return "home";
     }
+
+    @RequestMapping("dashboard")
+    public String dashboard() {
+        return "dashboard";
+    }
 }

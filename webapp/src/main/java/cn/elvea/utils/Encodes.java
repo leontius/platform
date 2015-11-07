@@ -68,8 +68,12 @@ public class Encodes {
     /**
      * Xml 转码.
      */
-    public static String escapeXml(String xml) {
-        return StringEscapeUtils.escapeXml(xml);
+    public static String escapeXml11(String xml) {
+        return StringEscapeUtils.escapeXml11(xml);
+    }
+
+    public static String escapeXml10(String xml) {
+        return StringEscapeUtils.escapeXml10(xml);
     }
 
     /**

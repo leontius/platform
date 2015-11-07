@@ -2,14 +2,12 @@ package cn.elvea.controller;
 
 import cn.elvea.domain.User;
 import cn.elvea.service.UserService;
+import cn.elvea.utils.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -46,6 +44,13 @@ public class UserController {
             return "user/update";
         }
         return "user/update";
+    }
+
+    @RequestMapping("list/json")
+    @ResponseBody
+    public Page<User> listJson(Page<User> page) {
+        userService.findByPage(page);
+        return page;
     }
 
     @RequestMapping()
